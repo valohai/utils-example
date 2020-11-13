@@ -1,0 +1,21 @@
+- step:
+    name: resize
+    image: python:3.7
+    command: python ./resize.py {parameters}
+    parameters:
+    - name: width
+      default: 640
+      multiple-separator: ','
+      optional: false
+      type: integer
+    - name: height
+      default: 480
+      multiple-separator: ','
+      optional: false
+      type: integer
+    inputs:
+    - name: images
+      default:
+      - https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
+      - https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+      optional: false
